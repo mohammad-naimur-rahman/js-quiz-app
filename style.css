@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+}
+.main-div {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(206, 92%, 94%);
+}
+
+.inner-div {
+  max-width: 600px;
+  margin: 2rem;
+  background-color: #fff;
+  padding: 3rem 8rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+}
+.inner-div h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.inner-div li {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+input,
+label {
+  cursor: pointer;
+}
+
+#submit,
+.btn {
+  padding: 1rem 3rem;
+  outline: none;
+  margin: 2rem auto;
+  font-size: 2rem;
+  display: block;
+  border: none;
+  background-color: #74b9ff;
+  color: #fff;
+  border-radius: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#submit:hover {
+  background-color: #0984e3;
+}
+
+#showScore {
+  background-color: #dfe6e9;
+  margin-top: 3rem;
+  padding: 3rem 4rem;
+  box-shadow: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+}
+
+#showScore h3 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+#showScore .btn {
+  margin-top: 2rem;
+  background-color: #55efc4;
+  color: #2d3436;
+  transition: 0.3s;
+}
+
+#showScore .btn:hover {
+  background-color: #00b894;
+  color: #fff;
+}
+
+.scoreArea {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 50%;
+  }
+
+  .inner-div {
+    padding: 2rem;
+  }
+}
