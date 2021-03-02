@@ -36,6 +36,7 @@ const quizDB = [
 let questionCount = 0;
 let score = 0;
 
+const questionArea = document.querySelector('.question-area');
 const question = document.querySelector('.question');
 const option1 = document.querySelector('#option1');
 const option2 = document.querySelector('#option2');
@@ -75,25 +76,33 @@ const deselectOption = () => {
     answers.forEach(el => el.checked = false);
 }
 
+
 submit.addEventListener('click', () => {
-    const checkedAnswer = getCheckedAnswer();
+    answers.forEach(el => {
+        if (el.checked == true) {
+            const checkedAnswer = getCheckedAnswer();
 
-    if (checkedAnswer === quizDB[questionCount].ans) {
-        score++;
-    }
+            if (checkedAnswer === quizDB[questionCount].ans) {
+                score++;
+            }
 
-    questionCount++;
+            questionCount++;
 
-    deselectOption();
+            deselectOption();
 
-    if (questionCount < quizDB.length) {
-        loadQuestion();
-    } else {
-        showScore.innerHTML = `
-            <h3> Your score is ${score} / ${quizDB.length}</h3>
-            <button class="btn" onclick="location.reload()">Play Again!</button>
-        `
-        showScore.classList.remove('scoreArea');
-        submit.style.display = 'none';
-    }
+            if (questionCount < quizDB.length) {
+                loadQuestion();
+            } else {
+                showScore.innerHTML = `
+                        <h3> Your score is ${score} / ${quizDB.length}</h3>
+                        <button class="btn" onclick="location.reload()">Play Again!</button>
+                    `
+                showScore.classList.remove('scoreArea');
+                submit.style.display = 'none';
+                questionArea.style.display = 'none';
+                question.style.display = 'none';
+            }
+        }
+    })
 })
+
